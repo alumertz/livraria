@@ -16,9 +16,9 @@
         <nav id="menu">
         <input style="display: inline;">
             <ul>
-                <li><a href="cadastrar.html">Entrar/Cadastrar</a></li>
-                <li><a href="carrinho.html">Carrinho</a></li>
-                <li><a href="faleConosco.html">Fale conosco</a></li>
+                <li><a href="cadastrar.php">Entrar/Cadastrar</a></li>
+                <li><a href="carrinho.php">Carrinho</a></li>
+                <li><a href="faleConosco.php">Fale conosco</a></li>
     
             </ul>
         </nav>

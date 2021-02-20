@@ -11,9 +11,9 @@
         <nav id="menu">
         <input style="display: inline;">
             <ul>
-                <li><a href="cadastrar.html">Entrar/Cadastrar</a></li>
-                <li><a href="carrinho.html">Carrinho</a></li>
-                <li><a href="faleConosco.html">Fale conosco</a></li>
+                <li><a href="cadastrar.php">Entrar/Cadastrar</a></li>
+                <li><a href="carrinho.php">Carrinho</a></li>
+                <li><a href="faleConosco.php">Fale conosco</a></li>
     
             </ul>
         </nav>
@@ -38,7 +38,7 @@
         </div>
         <div>
             <h3>Cadastrar</h3>
-            <form method="POST" action="formularios.php?">
+            <form method="POST" action="../../controller/formularios.php">
 
                 <fieldset><legend>Dados pessoais</legend>
                 <label>Nome:<input type="text" name="nome" placeholder="Nome completo"></label>
@@ -88,18 +88,6 @@
             </form>
             
 
-            <!-- <form method="POST" action="formularios.php">
-
-                <fieldset><legend>Dados pessoais</legend>
-                <label>Nome:<input type="text" name="nome" placeholder="Nome completo"></label>
-                <label>Endereço: <input type="text" name="endereco" placeholder="Rua, logradouro..., n°"></label>
-                
-                <label>Telefone: <input type="number" name="telefone" placeholder="Telefone"></label>
-                </fieldset>
-                <br>
-                <input type="submit">
-                
-                </form> -->
         </div>
     </div>
     </main>
