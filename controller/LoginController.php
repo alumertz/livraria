@@ -16,18 +16,11 @@ if (! empty($_REQUEST['email']) && !empty ($_REQUEST['senha'])) {
         session_start();
         $_SESSION['id_cliente'] = $cliente->getId();
         $_SESSION['nome'] = $cliente->getNome();
-        //header("Location: ../view/php/index.php");
+        header("Location: ../view/php/index.php");
     }
     else{
-        //$_SESSION["errorMessage"] = "Invalid Credentials";
-        //header("Location: ../view/php/cadastrar.php?msg1=Cadastro não encontrado!");
+        header("Location: ../view/php/cadastrar.php?msg1=Cadastro não encontrado!");
     }
-
-    // if (!$isLoggedIn) {
-    //     
-    // }
-    
-    //header("Location: ./index.php");
     exit();
     
 }

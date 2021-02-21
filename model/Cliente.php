@@ -1,9 +1,5 @@
 <?php
 
-// function __autoload($class_name) {
-// 	require_once $class_name . '.php';
-// }
-
 include 'Conexao.php';
 
 class Cliente{
@@ -22,14 +18,8 @@ class Cliente{
 
 	
 	
-	function __construct(/*$nome, $cpf, $email, $senha, $end, $cep*/){
-		$this->conect = new Conexao();
-		// $this->nome = $nome;
-		// $this->cpf= $cpf;
-		// $this->email = $email;
-		// $this->senha = $senha;
-		// $this->end = $end;
-		// $this->cep = $cep;			
+	function __construct(){
+		$this->conect = new Conexao();	
 	}
 
 	function insert(){

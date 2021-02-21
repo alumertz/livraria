@@ -16,7 +16,6 @@ class Conexao{
     function findUser($email, $senha){
         $comando = $this->pdo->prepare("SELECT * FROM cliente WHERE (email=? && senha=?)");
         $comando->execute([$email,$senha]);
-        echo($comando->debugDumpParams());
         $result = $comando->fetch(PDO::FETCH_ASSOC);
         
         return $result;
@@ -26,7 +25,15 @@ class Conexao{
         $comando = $this->pdo->prepare("SELECT * FROM livro");
         $comando->execute([$email,$senha]);
         $result = $comando->fetch(PDO::FETCH_ASSOC);
-        print_f("livros<br> ".$result);
+        print_r($result);
+        return $result;
+    }
+
+    function getLivro($id){
+        $comando = $this->pdo->prepare("SELECT * FROM livro WHERE id=?");
+        $comando->execute([$id]);
+        $result = $comando->fetch(PDO::FETCH_ASSOC);
+        //print_r($result);
         return $result;
     }
     
