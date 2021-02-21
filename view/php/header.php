@@ -2,7 +2,7 @@
 
         <nav id="menu" style="border: red 3px" >
         <div>
-            <a href="./home.php">RB Book Store </a>
+            <a href="./index.php">RB Book Store </a>
 
             <div style="border: red 3px">
 
@@ -12,18 +12,20 @@
                     <li><a href="faleConosco.php">Fale conosco</a></li>
                     
                 </ul>
-                <form method="GET" action="">
-                        <input type="search">
-                        <button type="submit"> Pesquisar</button>
-                    </form>
-                    <?php
-                        if (isset($_SESSION['nome'])) {
-                            echo '<h5>Olá, '.$_SESSION['nome'].'</h3>'; 
-                            echo "<form method='POST' action='../../controller/DeslogarController.php'>
-                                <button type='submit'> Deslogar</button>
-                            </form>";
-                        }
-                    ?>
+                <form method='POST' action="../../controller/PesquisarController.php">
+                    <input type = "text" name="search_bar" id= "search_bar" placeholder="Pesquise aqui" 
+                    style="display: inline; width: 300px; margin-left:7px;">
+                    <input type="submit" name="submit">
+                </form>
+
+                <?php
+                    if (isset($_SESSION['nome'])) {
+                        echo '<h5>Olá, '.$_SESSION['nome'].'</h3>'; 
+                        echo "<form method='POST' action='../../controller/DeslogarController.php'>
+                            <button type='submit'> Deslogar</button>
+                        </form>";
+                    }
+                ?>
                     
             </div>
         </div>

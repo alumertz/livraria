@@ -16,9 +16,28 @@ class Conexao{
     function findUser($email, $senha){
         $comando = $this->pdo->prepare("SELECT * FROM cliente WHERE (email=? && senha=?)");
         $comando->execute([$email,$senha]);
+        echo($comando->debugDumpParams());
         $result = $comando->fetch(PDO::FETCH_ASSOC);
-
+        
         return $result;
+    }
 
-    }     
+    function getLivros(){
+        $comando = $this->pdo->prepare("SELECT * FROM livro");
+        $comando->execute([$email,$senha]);
+        $result = $comando->fetch(PDO::FETCH_ASSOC);
+        print_f("livros<br> ".$result);
+        return $result;
+    }
+    
+    function search($busca){
+        $busca = '%'.str_replace ( ' ' , ' % ', $busca).'%';
+
+        $comando = $this->pdo->prepare("SELECT * FROM livro WHERE (titulo like ? or autor like ?)");
+        $comando->execute([$busca,$busca]);
+        // echo($comando->debugDumpParams());
+        $result = $comando->fetch(PDO::FETCH_ASSOC);
+        
+        return $result;
+    }
 }
