@@ -29,7 +29,9 @@
         echo "ISBN: ".$livro->getIsbn()."<br>";
         echo "Preço: ".$livro->getPreco()."<br>";
     ?>
-    <form method="POST" action="<?php echo ('../../controller/LivroController.php?id='.$idLivro); ?>">
+    <form method="POST" action="<?php       
+          
+         echo ('../../controller/LivroController.php?id='.$idLivro); ?>">
         <input name="quant" value="1">
         <input type="submit" value="Comprar">
         

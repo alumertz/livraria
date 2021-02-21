@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <header> 
 
         <nav id="menu" style="border: red 3px" >

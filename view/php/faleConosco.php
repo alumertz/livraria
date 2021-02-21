@@ -17,6 +17,7 @@
     <main>
     <?php include("aside.php") ?>
     <div class="body-text"> 
+        <h3>Fale conosco</h3>
         <form method="POST" action="../../controller/FaleConoscoController.php">
         <input type="text" placeholder="Seu nome completo" name="nome"> </input>
         <input type="text" placeholder="Seu endereço de e-mail" name="email"> </input>
