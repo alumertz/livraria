@@ -1,19 +1,19 @@
 <?php
-
+    $nome = filter_var($_REQUEST['nome'],FILTER_SANITIZE_STRING);
     $texto = filter_var($_REQUEST['texto'],FILTER_SANITIZE_STRING);
     $email = filter_var($_REQUEST['email'],FILTER_SANITIZE_STRING);
     $titulo = filter_var($_REQUEST['titulo'],FILTER_SANITIZE_STRING);
 
     if ($_REQUEST['texto'] && $_REQUEST['email'] && $_REQUEST['titulo']) {
-        if(mail('ana.lls@outlook.com',$titulo, $texto,'From: Aluno <'.$email.'s>')){
-            echo "E-mail enviado com sucesso!";
+        if(mail('ana.lls@outlook.com',$titulo, $texto,'From:'.$nome.' <'.$email.'s>')){
+            header('Location: ../view/php/faleConosco.php?msg=E-mail enviado com sucesso!');
         }
         else{
-            echo "Não foi possível enviar o e-mail!";
+            header('Location: ../view/php/faleConosco.php?msg=Não foi possível enviar o e-mail!');
         }
     }
     else{
-        echo "Preencha todos os campos!";
+        header('Location: ../view/php/faleConosco.php?msg=Preencha todos os campos!');
     }
     
 

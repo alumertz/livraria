@@ -21,12 +21,15 @@ session_start();
     <?php include("aside.php") ?>
     <div class="body-text"> 
         <form method="POST" action="../../controller/FaleConoscoController.php">
+        <input type="text" placeholder="Seu nome completo" name="nome"> </input>
         <input type="text" placeholder="Seu endereço de e-mail" name="email"> </input>
         <input type="text" placeholder="Título da mensagem" name="titulo"> </input>
          <textarea placeholder="Escreva suas dúvidas,
          considerações, críticas, etc." rows="5" name="texto"> </textarea>
         <button type="submit"> Enviar</button>
     </form>
+    <?php  error_reporting(E_ALL & ~E_NOTICE);
+        echo $_REQUEST['msg']; ?>
 
     </div>
     

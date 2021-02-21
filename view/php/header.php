@@ -19,11 +19,12 @@
                     <?php
                         if (isset($_SESSION['nome'])) {
                             echo '<h5>Olá, '.$_SESSION['nome'].'</h3>'; 
+                            echo "<form method='POST' action='../../controller/DeslogarController.php'>
+                                <button type='submit'> Deslogar</button>
+                            </form>";
                         }
                     ?>
-                    <form method="POST" action="../../controller/DeslogarController.php">
-                        <button type="submit"> Deslogar</button>
-                    </form>
+                    
             </div>
         </div>
         
