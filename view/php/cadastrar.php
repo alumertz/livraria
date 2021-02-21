@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <!DOCTYPE html>
 
 <html lang="pt-br">
@@ -6,37 +8,22 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    <header> RB Book Store 
-
-        <nav id="menu">
-        <input style="display: inline;">
-            <ul>
-                <li><a href="cadastrar.php">Entrar/Cadastrar</a></li>
-                <li><a href="carrinho.php">Carrinho</a></li>
-                <li><a href="faleConosco.php">Fale conosco</a></li>
-    
-            </ul>
-        </nav>
-
-    </header>
+    <?php include("header.php") ?>
     <main>
         
-    <aside>
-        
-        
-        <li><a href="#">Ficção</a></li>
-        <li><a href="#">Não-ficção</a></li>
-    </aside>
+    <?php include("aside.php") ?>
     <div class="body-text">
 
     
         <div>
             <h3>Fazer login</h3>
             <form method="POST" action="../../controller/LoginController.php">
-                <input type="email" name="emaillog" placeholder="E-mail"></label>
-                <input type="password" name="senhalog" placeholder="Senha"></label>
+                <input type="email" name="email" placeholder="E-mail"></label>
+                <input type="password" name="senha" placeholder="Senha"></label>
+                <input type="submit" value="Login">
             </form>
-            <button>Login</button>
+            <?php error_reporting(E_ALL & ~E_NOTICE);
+            echo $_REQUEST['msg1'] ?>
         </div>
         <div>
             <h3>Cadastrar</h3>
@@ -56,7 +43,7 @@
                 </fieldset>
                 <label>Senha: <input type="password" name="senha" placeholder="Senha:"></label>
                 <input type="submit">
-                
+                <?php echo $_REQUEST['msg2'] ?>
             </form>
             
 

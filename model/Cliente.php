@@ -7,29 +7,53 @@
 include 'Conexao.php';
 
 class Cliente{
+
+	private $id;
+
 	private $nome;
 	private $cpf;
 	private $email;
 	private $senha;
 
-	private $end;
+	private $endereco;
 	private $cep;
+
+	private $conect;
 
 	
 	
-	function __construct($nome, $cpf, $email, $senha, $end, $cep){
-		$this->nome = $nome;
-		$this->cpf= $cpf;
-		$this->email = $email;
-		$this->senha = $senha;
-		$this->end = $end;
-		$this->cep = $cep;			
+	function __construct(/*$nome, $cpf, $email, $senha, $end, $cep*/){
+		$this->conect = new Conexao();
+		// $this->nome = $nome;
+		// $this->cpf= $cpf;
+		// $this->email = $email;
+		// $this->senha = $senha;
+		// $this->end = $end;
+		// $this->cep = $cep;			
 	}
 
 	function insert(){
-		$conect = new Conexao();
-		$conect->insertCliente($this->nome, $this->cpf, $this->email,
-		 	 $this->senha, $this->end, $this->cep);
+		$this->conect->insertCliente($this->nome, $this->cpf, $this->email,
+		 	 $this->senha, $this->endereco, $this->cep);
+	}
+
+	function processLogin($email, $senha){
+		$result = $this->conect->findUser($email, $senha);
+		
+		if($result){
+			$this->nome = $result['nome'];
+			$this->cpf= $result['cpf'];
+			$this->email = $result['email'];
+			$this->senha = $result['senha'];
+			$this->end = $result['endereco'];
+			$this->cep = $result['cep'];
+			$this->id = $result['id'];
+			return true;	
+		}
+		else {
+			return false;
+		}
+		
 	}
 	
 	function getNome(){
@@ -44,11 +68,15 @@ class Cliente{
 	function getSenha(){
 		return $this->senha;
 	}
-	function getEnd(){
-		return $this->end;
+	function getEndereco(){
+		return $this->endereco;
 	}
 	function getCep(){
 		return $this->cep;
+	}
+
+	function getId(){
+		return $this->id;
 	}
 
 	function setNome($nome){
@@ -63,11 +91,11 @@ class Cliente{
 	function setSenha($senha){
 		$this->senha = $senha;
 	}
-	function setEnd($end){
-		$this->end = $end;
+	function setEndereco($endereco){
+		$this->endereco = $endereco;
 	}
 	function setCep($cep){
-		$this->cep = [$cep];
+		$this->cep = $cep;
 	}
 	
 

@@ -1,19 +1,35 @@
 <?php
-//namespace Phppot;
 
-//use \Phppot\Member;
-if (! empty($_POST["login"])) {
-    session_start();
-    $username = filter_var($_POST["user_name"], FILTER_SANITIZE_STRING);
-    $password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
-    require_once (__DIR__ . "./class/Member.php");
+require_once ("../model/Cliente.php");
+
+$email = filter_var($_REQUEST['email'], FILTER_SANITIZE_STRING);
+$senha = filter_var($_REQUEST['senha'], FILTER_SANITIZE_STRING);
+
+if (! empty($_REQUEST['email']) && !empty ($_REQUEST['senha'])) {
+       
     
-    //$member = new Member();
-    //$isLoggedIn = $member->processLogin($username, $password);
-    // if (! $isLoggedIn) {
-    //     $_SESSION["errorMessage"] = "Invalid Credentials";
+    $cliente = new Cliente();
+    
+    $isLoggedIn = $cliente->processLogin($email, $senha);
+
+    if ($isLoggedIn){
+        session_start();
+        $_SESSION['id_cliente'] = $cliente->getId();
+        $_SESSION['nome'] = $cliente->getNome();
+        header("Location: ../view/php/home.php");
+    }
+    else{
+        //$_SESSION["errorMessage"] = "Invalid Credentials";
+        header("Location: ../view/php/cadastrar.php?msg1=Cadastro não encontrado!");
+    }
+
+    // if (!$isLoggedIn) {
+    //     
     // }
-    // header("Location: ./index.php");
+    
+    //header("Location: ./index.php");
     exit();
     
 }
+
+
