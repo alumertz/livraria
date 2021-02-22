@@ -1,4 +1,4 @@
 <aside>
-        <li><a href="#">Ficção</a></li>
-        <li><a href="#">Não-ficção</a></li>
+        <li><a href="../../controller/CategoriasController.php?cat=1">Ficção</a></li>
+        <li><a href="../../controller/CategoriasController.php?cat=2">Não-ficção</a></li>
 </aside>

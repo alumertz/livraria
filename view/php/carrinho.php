@@ -29,7 +29,7 @@
                 $prod[2]."</td><td>".$prod[3]."</td><td>".$subtotal."</td></tr>");
             }
             echo '<tr><td><b>Total</b></td><td></td><td></td><th>'.$total.'</th></tr>';
-            echo '<button title="Fica pra próxima"> Comprar </button>';
+            echo '<button> Comprar </button>';
         ?>
         
         </div>

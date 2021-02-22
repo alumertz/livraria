@@ -27,7 +27,7 @@
         echo "Autor: ".$livro->getAutor()."<br>";
         echo "Editora: ".$livro->getEditora()."<br>";
         echo "ISBN: ".$livro->getIsbn()."<br>";
-        echo "Preço: ".$livro->getPreco()."<br>";
+        echo "Preço: R$".$livro->getPreco()."<br>";
     ?>
     <form method="POST" action="<?php       
           

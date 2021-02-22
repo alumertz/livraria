@@ -23,9 +23,9 @@ class Conexao{
 
     function getLivros(){
         $comando = $this->pdo->prepare("SELECT * FROM livro");
-        $comando->execute([$email,$senha]);
-        $result = $comando->fetch(PDO::FETCH_ASSOC);
-        print_r($result);
+        $comando->execute();
+        $result = $comando->fetchAll(PDO::FETCH_ASSOC);
+        
         return $result;
     }
 
@@ -44,6 +44,22 @@ class Conexao{
         //echo($comando->debugDumpParams());
         $result = $comando->fetchAll(PDO::FETCH_ASSOC);
                 
+        return $result;
+    }
+
+    function getByCategoria($cat){
+        $comando = $this->pdo->prepare("SELECT * FROM livro WHERE categoria = ?");
+        $comando->execute([$cat]);
+        $result = $comando->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $result;
+    }
+
+    function getDestaques(){
+        $comando = $this->pdo->prepare("SELECT * FROM livro WHERE destaque = 1");
+        $comando->execute();
+        $result = $comando->fetchAll(PDO::FETCH_ASSOC);
+        
         return $result;
     }
 }

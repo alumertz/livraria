@@ -3,7 +3,7 @@
 
         <nav id="menu" style="border: red 3px" >
         <div>
-            <a href="./index.php">RB Book Store </a>
+            <a href="./index.php">RB Book Store </a> Por Ana Laura e Fabrício. Obs.: ainda falta parte que faltou da Ana 
 
             <div style="border: red 3px">
 

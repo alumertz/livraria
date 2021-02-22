@@ -1,3 +1,4 @@
+<?php require_once ("../../model/Conexao.php"); ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <!DOCTYPE html>
@@ -14,7 +15,19 @@
     <?php include("header.php") ?>
     
     <main>
-    <?php include("aside.php") ?>
+    <?php
+        
+        include("aside.php");
+
+        $conect = new Conexao();
+        
+        $_SESSION['pesquisa'] = $conect->getDestaques();
+        
+        echo "<div class='body-text'> <br><h3> Destaques </h3>";
+        include("lista.php");
+        echo "</div>";
+    
+    ?>
     </main>
 
 
