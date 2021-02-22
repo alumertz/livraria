@@ -33,7 +33,6 @@ class Conexao{
         $comando = $this->pdo->prepare("SELECT * FROM livro WHERE id=?");
         $comando->execute([$id]);
         $result = $comando->fetch(PDO::FETCH_ASSOC);
-        //print_r($result);
         return $result;
     }
     
@@ -42,9 +41,9 @@ class Conexao{
 
         $comando = $this->pdo->prepare("SELECT * FROM livro WHERE (titulo like ? or autor like ?)");
         $comando->execute([$busca,$busca]);
-        // echo($comando->debugDumpParams());
-        $result = $comando->fetch(PDO::FETCH_ASSOC);
-        
+        //echo($comando->debugDumpParams());
+        $result = $comando->fetchAll(PDO::FETCH_ASSOC);
+                
         return $result;
     }
 }
