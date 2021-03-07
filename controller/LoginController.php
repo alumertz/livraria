@@ -16,6 +16,7 @@ if (! empty($_REQUEST['email']) && !empty ($_REQUEST['senha'])) {
         session_start();
         $_SESSION['id_cliente'] = $cliente->getId();
         $_SESSION['nome'] = $cliente->getNome();
+        $_SESSION['email'] = $cliente->getEmail();
         header("Location: ../view/php/index.php");
     }
     else{

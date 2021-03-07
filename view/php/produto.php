@@ -32,7 +32,7 @@
     ?>
     <form method="POST" action="<?php       
           
-         echo ('../../controller/LivroController.php?id='.$idLivro); ?>">
+        echo ('../../controller/LivroController.php?id='.$idLivro); ?>">
         <input name="quant" value="1">
         <input type="submit" value="Comprar">
         

@@ -23,17 +23,29 @@
             echo "<table id='tabela'>";
             echo '<tr><th>Produto</th><th>Preço</th><th>Quantidade</th><th>Subtotal</th></tr>';
 
-            foreach ($_SESSION['carrinho'] as $prod){                
+            for ($x=0; $x<count($_SESSION['carrinho']); $x++){
+                if(isset($_GET[$x])){
+                    $_SESSION['carrinho'][$x][3]= filter_var($_GET[$x], FILTER_SANITIZE_NUMBER_INT);
+                }
+            }
+
+            foreach ($_SESSION['carrinho'] as $key =>$prod){                
                 $subtotal = $prod[2]*$prod[3];
                 $total +=$subtotal;
-                echo ("<tr><td>".$prod[1]."</td><td>".
-                $prod[2]."</td><td>".$prod[3]."</td><td>".$subtotal."</td></tr>");
+                echo ("<tr><td>".$prod[1]."</td><td>".$prod[2]."</td><td><form><input type='text'
+                  name='".$key ."' onchange='this.form.submit()'
+                  value='".$prod[3]."'></form></td><td>".$subtotal."</td></tr>");
             }
             echo '<tr><td><b>Total</b></td><td></td><td></td><th>'.$total.'</th></tr>';
-            echo '<button> Comprar </button>';
         ?>
         
         </div>
+        <div> 
+        <form method="POST" action="../../controller/FinalizarController.php">            
+            <button type="submit"> Finalizar compra  </button>
+        </form>
+        <?php error_reporting(E_ALL & ~E_NOTICE);            
+            echo $_REQUEST['msg'] ?>
     </main>
 
 

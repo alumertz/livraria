@@ -10,15 +10,21 @@ class Conexao{
 
     function insertCliente($nome, $cpf, $email, $senha, $end, $cep){
         $comando = $this->pdo->prepare("INSERT INTO cliente (nome, email, cpf, senha, endereco, cep) VALUES (?, ?, ?, ?, ?, ?)");
-        $comando->execute([$nome,$email,$cpf, $senha, $end, $cep]);
+        $comando->execute([$nome,$email,$cpf, password_hash($senha, PASSWORD_DEFAULT), $end, $cep]);
     }
 
     function findUser($email, $senha){
-        $comando = $this->pdo->prepare("SELECT * FROM cliente WHERE (email=? && senha=?)");
-        $comando->execute([$email,$senha]);
+        $comando = $this->pdo->prepare("SELECT * FROM cliente WHERE (email=?)");
+        $comando->execute([$email]);
         $result = $comando->fetch(PDO::FETCH_ASSOC);
-        
-        return $result;
+
+        if (password_verify ($senha, $result['senha'] )){
+            echo "oi";
+            return $result;
+         }
+        else{
+            return false;
+        }
     }
 
     function getLivros(){

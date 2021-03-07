@@ -15,7 +15,7 @@
     <?php include("aside.php") ?>
     <div class="body-text">
 
-    
+        <?php error_reporting(E_ALL & ~E_NOTICE); echo $_REQUEST['msg'];?>
         <div>
             <h3>Fazer login</h3>
             <form method="POST" action="../../controller/LoginController.php">
@@ -23,7 +23,7 @@
                 <input type="password" name="senha" placeholder="Senha"></label>
                 <input type="submit" value="Login">
             </form>
-            <?php error_reporting(E_ALL & ~E_NOTICE);
+            <?php error_reporting(E_ALL & ~E_NOTICE);            
             echo $_REQUEST['msg1'] ?>
         </div>
         <div>
