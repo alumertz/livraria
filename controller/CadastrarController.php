@@ -16,7 +16,7 @@
     
 
     if($nome==null || $endereco==null || $cpf==null || $endereco==null || $cep==null  ){
-        header('Location:../view/php/cadastrar.php?msg2=Preencha todos os campos!'); 
+        //header('Location:../view/php/cadastrar.php?msg2=Preencha todos os campos!'); 
     }
     
     
@@ -31,7 +31,7 @@
 
         
         $cliente->insert();
-        header('Location:../view/php/cadastrar.php?msg2=Cadastrado com sucesso!');  
+        //header('Location:../view/php/cadastrar.php?msg2=Cadastrado com sucesso!');  
     }
 ?>
 

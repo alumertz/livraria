@@ -22,9 +22,9 @@ function validateCadastrar (res){
     }
 
     var c = res.cpf.value;
-    if (c.match(/^([0-9]){3}\.([0-9]){3}\.([0-9]){3}-([0-9]){2}$/)==null) {                
+    if (c.match(/([0-9]){11}/)==null) {                
         res.cpf.focus();
-        alert('Insira o CPF nesse modelo: 000.000.000-00!');                
+        alert('Insira o CPF somente com números: 00000000000!');                
         return false;
     }
 
