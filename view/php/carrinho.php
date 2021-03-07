@@ -12,7 +12,7 @@
 </head>
 <body>
     
-    <?php include("header.php") ?>
+    <?php include("header.php"); error_reporting(E_ALL & ~E_NOTICE);?>
     
     <main>
     <?php include("aside.php") ?>

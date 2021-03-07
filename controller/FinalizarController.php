@@ -7,21 +7,21 @@
     foreach ($_SESSION['carrinho'] as $key =>$prod){                
         $subtotal = $prod[2]*$prod[3];
         $total +=$subtotal;
-        $texto .= "<tr><td> ".$prod[1]."</td><td>".$prod[2]."</td><td>".
-        $prod[3]."'></td><td>".$subtotal."</td></tr>";
+        $texto .= "Produto: ".$prod[1]." Preço: ".$prod[2]." Quantidade: ".
+        $prod[3]." Subtotal".$subtotal."\n";
     }
-    $texto .= "<tr><td><b>Total</b></td><td></td><td></td><th>'.$total.'</th></tr>";
-
+    $texto .= "Total: ".$total."\n Obrigado pela preferência!";
+    echo ($texto);
     if ($email) {
         if(mail($email, "Recibo de sua compra em RB Book Store", $texto)){
-            header('Location: ../view/php/carrinho.php?msg=Compra finalizada com sucesso!');
+            //header('Location: ../view/php/carrinho.php?msg=Compra finalizada com sucesso!');
         }
         else{
-            header('Location: ../view/php/carrinho.php?msg=Não foi possível finalizar a compra!');
+            //header('Location: ../view/php/carrinho.php?msg=Não foi possível finalizar a compra!');
         }
     }
     else{
-        header('Location: ../view/php/cadastrar.php?msg=Você precisa estar logado para finalizar uma compra!');
+        //header('Location: ../view/php/cadastrar.php?msg=Você precisa estar logado para finalizar uma compra!');
     }
     
 

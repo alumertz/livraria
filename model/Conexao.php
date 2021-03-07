@@ -19,7 +19,6 @@ class Conexao{
         $result = $comando->fetch(PDO::FETCH_ASSOC);
 
         if (password_verify ($senha, $result['senha'] )){
-            echo "oi";
             return $result;
          }
         else{

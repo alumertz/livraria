@@ -19,10 +19,19 @@
     <div class="body-text"> 
         <h3>Fale conosco</h3>
         <form method="POST" action="../../controller/FaleConoscoController.php">
-        <input type="text" placeholder="Seu nome completo" name="nome"> </input>
-        <input type="text" placeholder="Seu endereço de e-mail" name="email"> </input>
-        <input type="text" placeholder="Título da mensagem" name="titulo"> </input>
-         <textarea placeholder="Escreva suas dúvidas,
+        <?php 
+            if (!isset($_SESSION['nome'])) {
+                echo ("<input type='text' placeholder='Seu nome completo' name='nome'> </input>
+                <input type='text' placeholder='Seu endereço de e-mail' name='email'> </input>');");
+            }
+            else{
+                echo ("De: ".$_SESSION['nome']." < ".$_SESSION['email']." >");
+            }
+        
+        ?>
+       
+        <input type="text" style="display:block; margin:20px;" placeholder="Título da mensagem" name="titulo"> </input>
+        <textarea style="display:block; margin:20px; width:50%;" placeholder="Escreva suas dúvidas,
          considerações, críticas, etc." rows="5" name="texto"> </textarea>
         <button type="submit"> Enviar</button>
     </form>
