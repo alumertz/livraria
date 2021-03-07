@@ -11,7 +11,7 @@ if (isset($_SESSION['carrinho'])){
     for ($x=0; $x<count($_SESSION['carrinho']); $x++){
         
         if ($_SESSION['carrinho'][$x][0]==$idLivro){
-            $_SESSION['carrinho'][$x][3]+=$_REQUEST['quant'];
+            $_SESSION['carrinho'][$x][3]+=filter_var($_REQUEST['quant'], FILTER_SANITIZE_NUMBER_INT);
             $already_in = 1;
         }
     }
