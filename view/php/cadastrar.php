@@ -38,7 +38,7 @@ function validateCadastrar (res){
     var cep = res.cep.value;
     if (cep.match(/[0-9]{5}-[0-9]{3}/)==null) {                
         res.cep.focus();
-        alert('Insira um CEP com este formato: 00000-000!');                
+        alert('Insira um CEP somente com números: 00000000!');                
         return false;
     }
 }
@@ -86,7 +86,7 @@ function validateCadastrar (res){
                 <fieldset><legend>Endereço</legend>
                     <label>Endereço: <input type="text" name="endereco" placeholder="Rua, logradouro..., n°"></label>
                     
-                    <label>CEP: <input type="text" name="cep" placeholder="CEP"></label>
+                    <label>CEP: <input type="text" name="cep" placeholder="000000000"></label>
                 </fieldset>
                 <label>Senha: <input type="password" name="senha" placeholder="Senha:"></label>
                 <input type="submit">
