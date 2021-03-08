@@ -6,7 +6,7 @@
         foreach($result as $row){  
             $caminho = "produto.php?id=". $row['id'];
             
-            echo '<div> <h4><a href='.$caminho.'>'.$row['titulo'].' - '.
+            echo '<div id="result"> <h4><a href='.$caminho.'>'.$row['titulo'].' - '.
                 $row['autor'].' - R$'.$row['preco'].'</a><br>';
         }              
         

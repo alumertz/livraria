@@ -14,7 +14,7 @@
         $nome = filter_var($_REQUEST['nome'],FILTER_SANITIZE_STRING);
         $email = filter_var($_REQUEST['email'],FILTER_SANITIZE_STRING);
     }
-    if ($_REQUEST['texto'] && $_REQUEST['email'] && $_REQUEST['titulo']) {
+    if ($nome && $email && $_REQUEST['titulo']) {
         if(mail('ana.lls@outlook.com',$titulo, $texto,'From:'.$nome.' <'.$email.'>')){
             header('Location: ../view/php/faleConosco.php?msg=E-mail enviado com sucesso!');
         }

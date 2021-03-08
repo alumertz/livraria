@@ -3,22 +3,23 @@
     display: inline-flex;
 
     /* visual do link */
-    background-color:#EDEDED;
-    color: #333;
+    background-color:rgba(0, 0, 0, 0.3);
+    color: #fdff84;
     text-decoration: none;
-    border-bottom:3px solid #EDEDED;
+    
 }
 
 #menu ul li a:hover {
-    background-color:#D6D6D6;
-    color: #6D6D6D;
-    border-bottom:3px solid #040729;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom:3px solid #EDEDED;
+    color: #fff240;
+
 }
 
 
 
 nav{
-    display: inline;
+    display: inline-flex;
 }
 
 
@@ -26,28 +27,36 @@ nav{
 #menu ul li { display: inline; }
 
 header{
-    background-color:#D6D6D6;
-    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(https://images.unsplash.com/photo-1554357395-dbdc356ca5da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80);
+    /*background-color:#D6D6D6;*/
+    font-family: 'Libre Baskerville', serif;
     font-size: larger;
-    color: #040729;
+    color: #FFF;
     margin: 0;
+    height: 16%;
 
 }
 
 aside{
     margin-top: 0;
-    background-color:#D6D6D6;
+    background-color: rgba(169, 106, 23, 0.8);
     width: 10em;
     height: 100%; 
     list-style:none;
-    color: #333;
+    color: #fdff84;
     position: fixed;
     text-decoration: none;
 }
 aside li a{
     padding: 2px 10px;
-    color: #333;
+    color: #fdff84;
     text-decoration: none;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 20px;
+}
+aside li a:hover{
+    text-decoration:none;
+    color: #fff240;
 }
 
 main{
@@ -60,9 +69,9 @@ main{
 }
 
 #tabela {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Libre Baskerville', serif;
     border-collapse: collapse;
-    width: 100%;
+    width: 80%;
     }
 
     #tabela td, #tabela th {
@@ -70,15 +79,68 @@ main{
     padding: 8px;
     }
 
-    #tabela tr:nth-child(even){background-color: #f2f2f2;}
-
-    #tabela tr:hover {background-color: #ddd;}
 
     #tabela th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color:rgba(0, 139, 139, 0.5);
+    background-color:rgba(169, 106, 23, 0.8);
     }
 
+    #itens_topbar{
+        position: absolute;
+        right: 6%;
+        margin-top: 15px;
+    }
+
+    #logo{
+        color: #fdff84;
+        position: absolute;
+        right: 44%;
+        margin-top: 40px;
+        text-decoration: none;
+    }
+    #logo:hover{
+        color: #fff240;
+    }
+
+    #search_bar{
+        margin-top: 15px;
+    }
+
+    #button{
+        padding: 2px 10px;
+        display: inline-flex;
+    
+        /* visual do link */
+        background-color:rgba(0, 0, 0, 0.3);
+        color: #fdff84;
+        text-decoration: none;
+        border:none;
+
+    }
+
+    #button:hover{
+        background-color: rgba(0, 0, 0, 0.5);
+        border-bottom:3px solid #EDEDED;
+        border-top: none;
+        border-right: none;
+        border-left:none;
+        color: #fff240;
+
+    }
+
+    body{
+        background-color: rgba(187, 127, 0, 0.4);
+        font-family: 'Libre Baskerville', serif;
+    }
+
+    #result a{
+        color: black;
+    }
+
+    #result a:hover{
+        color: #fdff84;
+        text-decoration: none;
+    }
 

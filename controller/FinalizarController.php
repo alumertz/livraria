@@ -14,14 +14,14 @@
     echo ($texto);
     if ($email) {
         if(mail($email, "Recibo de sua compra em RB Book Store", $texto)){
-            //header('Location: ../view/php/carrinho.php?msg=Compra finalizada com sucesso!');
+            header('Location: ../view/php/carrinho.php?msg=Compra finalizada com sucesso!');
         }
         else{
-            //header('Location: ../view/php/carrinho.php?msg=Não foi possível finalizar a compra!');
+            header('Location: ../view/php/carrinho.php?msg=Não foi possível finalizar a compra!');
         }
     }
     else{
-        //header('Location: ../view/php/cadastrar.php?msg=Você precisa estar logado para finalizar uma compra!');
+        header('Location: ../view/php/cadastrar.php?msg=Você precisa estar logado para finalizar uma compra!');
     }
     
 

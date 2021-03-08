@@ -12,7 +12,7 @@
 </head>
 <body>
     
-    <?php include("header.php"); error_reporting(E_ALL & ~E_NOTICE);?>
+    <?php include("header.php"); error_reporting(0);?>
     
     <main>
     <?php include("aside.php") ?>
@@ -21,11 +21,17 @@
         <?php
             $total = 0;
             echo "<table id='tabela'>";
-            echo '<tr><th>Produto</th><th>Preço</th><th>Quantidade</th><th>Subtotal</th></tr>';
+            echo '<tr><th>Produto</th><th>Preço</th><th>Quantidade (Para excluir digite 0)</th><th>Subtotal</th></tr>';
 
             for ($x=0; $x<count($_SESSION['carrinho']); $x++){
                 if(isset($_GET[$x])){
-                    $_SESSION['carrinho'][$x][3]= filter_var($_GET[$x], FILTER_SANITIZE_NUMBER_INT);
+                    if($_GET[$x]==0){
+                        unset($_SESSION['carrinho'][$x]);
+                    }
+                    else{
+                        $_SESSION['carrinho'][$x][3]= filter_var($_GET[$x], FILTER_SANITIZE_NUMBER_INT);
+                    }
+                    
                 }
             }
 

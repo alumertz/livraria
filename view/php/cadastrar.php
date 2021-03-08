@@ -44,6 +44,8 @@ function validateCadastrar (res){
 <head>
     <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 </head>
 <body>
     <?php include("header.php") ?>
