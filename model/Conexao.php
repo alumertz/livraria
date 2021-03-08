@@ -11,7 +11,6 @@ class Conexao{
     function insertCliente($nome, $cpf, $email, $senha, $end, $cep){
         $comando = $this->pdo->prepare("INSERT INTO cliente (nome, email, cpf, senha, endereco, cep) VALUES (?, ?, ?, ?, ?, ?)");
         $comando->execute([$nome,$email,$cpf, password_hash($senha, PASSWORD_DEFAULT), $end, $cep]);
-        echo($comando->debugDumpParams());
     }
 
     function findUser($email, $senha){

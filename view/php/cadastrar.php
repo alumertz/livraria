@@ -36,7 +36,7 @@ function validateCadastrar (res){
     }
 
     var cep = res.cep.value;
-    if (cep.match(/[0-9]{5}-[0-9]{3}/)==null) {                
+    if (cep.match(/([0-9]){8}/)==null) {                
         res.cep.focus();
         alert('Insira um CEP somente com números: 00000000!');                
         return false;
@@ -79,7 +79,7 @@ function validateCadastrar (res){
                 <fieldset><legend>Dados pessoais</legend>
                 <label>Nome:<input type="text" name="nome" placeholder="Nome completo"></label>
                 <label>E-mail: <input type="email" name="email" placeholder="E-mail"></label>
-                <label>CPF: <input type="text" name="cpf" placeholder="CPF: 000.000.000-10"></label>                
+                <label>CPF: <input type="text" name="cpf" placeholder="00000000000"></label>                
                 
                 </fieldset>
                 
