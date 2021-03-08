@@ -2,15 +2,6 @@
 
 <script>
 
-function validateLogin (res){
-    var e = res.email.value;           
-            
-    if (e.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i)==null) {                
-        res.email.focus();
-        alert('Insira um e-mail com este formato: exemplo@exemplo.exemplo.opcional!');                
-        return false;
-    }
-}
 
 function validateCadastrar (res){
 
@@ -64,7 +55,7 @@ function validateCadastrar (res){
         <?php error_reporting(E_ALL & ~E_NOTICE); echo $_REQUEST['msg'];?>
         <div>
             <h3>Fazer login</h3>
-            <form onsubmit="return validateLogin(this)" method="POST" action="../../controller/LoginController.php">
+            <form method="POST" action="../../controller/LoginController.php">
                 <input type="email" name="email" placeholder="E-mail"></label>
                 <input type="password" name="senha" placeholder="Senha"></label>
                 <input type="submit" value="Login">
