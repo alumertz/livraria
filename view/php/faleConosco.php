@@ -22,7 +22,7 @@
         <?php 
             if (!isset($_SESSION['nome'])) {
                 echo ("<input type='text' placeholder='Seu nome completo' name='nome'> </input>
-                <input type='text' placeholder='Seu endereço de e-mail' name='email'> </input>');");
+                <input type='text' placeholder='Seu endereço de e-mail' name='email'> </input>");
             }
             else{
                 echo ("De: ".$_SESSION['nome']." < ".$_SESSION['email']." >");
